@@ -35,7 +35,7 @@ Usage
 
 
 >>> from piianalyzer.analyzer import PiiAnalyzer
->>> filepath = '/path/pr/url/to/your/file.csv'
+>>> filepath = '/path/or/url/to/your/file.csv'
 >>> piianalyzer = PiiAnalyzer(filepath)
 >>> analysis = piianalyzer.analysis()
 
