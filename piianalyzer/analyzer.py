@@ -2,20 +2,20 @@ import pandas as pd
 from commonregex import CommonRegex
 from nltk.tag.stanford import StanfordNERTagger
 
-# setup parsers
-standford_ner = StanfordNERTagger('classifiers/english.conll.4class.distsim.crf.ser.gz')
-parser = CommonRegex()
-
 
 class PiiAnalyzer(object):
     def __init__(self, filepath):
         self.filepath = filepath
 
     def analysis(self):
-        # read and prep the data
+        # reading and preparing the data
         data = pd.read_csv(self.filepath, parse_dates=True).fillna('').to_string(index=False, header=False)
         cleaned_data = ' '.join(data.split())
         split_data = list(set(i.title() for i in cleaned_data.split('\n')))
+
+        # setting up parsers
+        standford_ner = StanfordNERTagger('classifiers/english.conll.4class.distsim.crf.ser.gz')
+        parser = CommonRegex()
 
         people = []
         organizations = []
