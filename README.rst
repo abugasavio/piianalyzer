@@ -26,7 +26,7 @@ I decided to use the following tools for the above task:
 3. `Stanford Named Entity Tagger <http://nlp.stanford.edu/software/CRF-NER.shtml>`_: for extracting the locations, organizations and peoples names.
 
 
-The analyzer opens the provided file and checks scans returns a summary of the types of data that are in the provided dataset.
+The analyzer opens the provided file, analyses it and returns a summary of the types of data that are in the provided dataset.
 With this information the data manager can easily classify the data.
 
 
@@ -49,8 +49,7 @@ Installation
 Requirements
 ^^^^^^^^^^^^
 
-Requires the Standford Tagger models.
-They can be downloaded from http://nlp.stanford.edu/software
+Requires the Stanford Named Entity Recognizer. It can be downloaded here: http://nlp.stanford.edu/software
 
 
 Compatibility
