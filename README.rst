@@ -18,12 +18,12 @@ My Solution
 
 I decided to use the following tools for the above task:
 
-1. `Pandas <https://github.com/pydata/pandas>_` for reading the data files into python and manipulating the datasets.
+1. `Pandas <https://github.com/pydata/pandas>`_ for reading the data files into python and manipulating the datasets.
 
-2. `Common Regular expressions <https://github.com/madisonmay/CommonRegex>_` for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
+2. `Common Regular expressions <https://github.com/madisonmay/CommonRegex>`_ for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
    credit card numbers,
 
-3. `Stanford Named Entity Tagger <http://nlp.stanford.edu/software/CRF-NER.shtml>_` for extracting the locations, organizations and peoples names.
+3. `Stanford Named Entity Tagger <http://nlp.stanford.edu/software/CRF-NER.shtml>`_ for extracting the locations, organizations and peoples names.
 
 
 The analyzer opens the provided file and checks scans returns a summary of the types of data that are in the provided dataset.
