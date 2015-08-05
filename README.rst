@@ -14,7 +14,7 @@ The tool should then alert the HDX data manager whether any such data sets have 
 and also alert the data owner about this.
 
 Solution
-----
+---
 
 I decided to use the following tools for the above task:
 
@@ -35,7 +35,7 @@ Usage
 
 from piianalyzer.analyzer import PiiAnalyzer
 
-filepath = '/Users/savioabuga/Documents/DataJam/HDX/DataSets/npii/Water_point_mapping_for_Embu__Kwale__Turkana_And_Isiolo_County.csv'
+filepath = '/path/pr/url/to/your/file.csv'
 piianalyzer = PiiAnalyzer(filepath)
 
 analysis = piianalyzer.analysis()
