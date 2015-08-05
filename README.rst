@@ -60,7 +60,8 @@ Licence
 
 TODO
 ----
-
+* Reading other file types such as excel, text, html etc
+*
 
 Authors
 -------
