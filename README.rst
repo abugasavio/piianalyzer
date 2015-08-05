@@ -49,7 +49,7 @@ Installation
 Requirements
 ^^^^^^^^^^^^
 
-Requires the Stanford Named Entity Recognizer. It can be downloaded here: http://nlp.stanford.edu/software
+Requires the Stanford Named Entity Recognizer. It can be downloaded here: http://nlp.stanford.edu/software/CRF-NER.shtml
 
 
 Compatibility
