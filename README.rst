@@ -1,14 +1,7 @@
 piianalyzer
 ===========
+Analyzing PII in datasets
 
-.. image:: https://pypip.in/v/piianalyzer/badge.png
-    :target: https://pypi.python.org/pypi/piianalyzer
-    :alt: Latest PyPI version
-
-
-"Analyzing PII in datasets'
-
-Challenge: How we scale and keep fresh the data in HDX?
 
 Task: Having an automated routine that classifies datasets and resources into ‘PII’ and ‘Not PII’.
 ===========
@@ -20,6 +13,8 @@ locate a single person, or to identify an individual in context. Examples of PII
 The tool should then alert the HDX data manager whether any such data sets have been uploaded
 and also alert the data owner about this.
 
+Solution
+----
 
 I decided to use the following tools for the above task:
 
@@ -29,6 +24,10 @@ I decided to use the following tools for the above task:
    credit card numbers,
 
 3. [Stanford Named Entity Tagger](http://nlp.stanford.edu/software/CRF-NER.shtml) for extracting the locations, organizations and peoples names.
+
+
+The analyzer opens the provided file and checks scans returns a summary of the types of data that are in the provided dataset.
+With this information the data manager can easily classify the data.
 
 
 Usage
@@ -45,6 +44,8 @@ analysis = piianalyzer.analysis()
 Installation
 ------------
 
+
+
 Requirements
 ^^^^^^^^^^^^
 
@@ -52,12 +53,17 @@ Requires the Standford Tagger models.
 They can be downloaded from http://nlp.stanford.edu/software
 and the STANFORD_MODELS environment variable set (a colon-separated list of paths).
 
-
 Compatibility
 -------------
 
 Licence
 -------
+
+TODO
+----
+
+
+
 
 Authors
 -------
