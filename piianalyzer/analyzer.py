@@ -13,15 +13,16 @@ class PiiAnalyzer(object):
 
     def analysis(self):
         # read and prep the data
-        df = pd.read_csv(self.filepath, parse_dates=True).fillna('').to_string(index=False, header=False)
-        df2 = ' '.join(df.split())
-        s = list(set(i.title() for i in df.split('\n')))
+        data = pd.read_csv(self.filepath, parse_dates=True).fillna('').to_string(index=False, header=False)
+        cleaned_data = ' '.join(data.split())
+        split_data = list(set(i.title() for i in cleaned_data.split('\n')))
 
         people = []
         organizations = []
         locations = []
 
-        for title, tag in standford_ner.tag(s):
+        # using standford ner
+        for title, tag in standford_ner.tag(split_data):
             if tag == 'PERSON':
                 people.append(title)
             if tag == 'LOCATION':
@@ -29,33 +30,13 @@ class PiiAnalyzer(object):
             if tag == 'ORGANIZATION':
                 organizations.append(title)
 
-        # TODO: returning dictionary instead of printing
+        # using regex
+        emails = parser.emails(cleaned_data)
+        phone_numbers = parser.phones(cleaned_data)
+        street_addresses = parser.street_addresses(cleaned_data)
+        credit_cards = parser.credit_cards(cleaned_data)
 
-        print '======================================='
-        print 'NAMES: COUNT ' + str(len(people))
-        print '======================================='
-        print list(set(people))
-        print '======================================='
-        print 'ORGANIZATIONS COUNT ' + str(len(organizations))
-        print '======================================='
-        print organizations
-        print '======================================='
-        print 'LOCATIONS COUNT ' + str(len(organizations))
-        print '======================================='
-        print organizations
-        print '======================================='
-        print 'EMAILS'
-        print '======================================='
-        print parser.emails(df2)
-        print '======================================='
-        print 'PHONE NUMBERS'
-        print '======================================='
-        print parser.phones(df2)
-        print '======================================='
-        print 'STREET ADDRESSES'
-        print '======================================='
-        print parser.street_addresses(df2)
-        print '======================================='
-        print 'CCs'
-        print '======================================='
-        print parser.credit_cards(df2)
+        return {'people': people, 'locations': locations, 'organizations': organizations,
+                'emails': emails, 'phone_numbers': phone_numbers, 'street_addresses': street_addresses,
+                'credit_cards': credit_cards
+                }
