@@ -33,13 +33,15 @@ With this information the data manager can easily classify the data.
 Usage
 -----
 
-from piianalyzer.analyzer import PiiAnalyzer
+```python
+>>> from piianalyzer.analyzer import PiiAnalyzer
 
-filepath = '/path/pr/url/to/your/file.csv'
-piianalyzer = PiiAnalyzer(filepath)
+>>> filepath = '/path/pr/url/to/your/file.csv'
+>>> piianalyzer = PiiAnalyzer(filepath)
 
-analysis = piianalyzer.analysis()
+>>> analysis = piianalyzer.analysis()
 
+```
 
 Installation
 ------------
