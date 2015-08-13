@@ -11,7 +11,7 @@ class PiiAnalyzer(object):
         # reading and preparing the data
         data = pd.read_csv(self.filepath, parse_dates=True).fillna('').to_string(index=False, header=False)
         cleaned_data = ' '.join(data.split())
-        split_data = list(set(i.title() for i in cleaned_data.split('\n')))
+        split_data = list(set(i.title() for i in cleaned_data.split()))
 
         # setting up parsers
         standford_ner = StanfordNERTagger('classifiers/english.conll.4class.distsim.crf.ser.gz')
