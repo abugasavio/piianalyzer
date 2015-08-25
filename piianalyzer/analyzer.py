@@ -35,8 +35,9 @@ class PiiAnalyzer(object):
         phone_numbers = parser.phones(cleaned_data)
         street_addresses = parser.street_addresses(cleaned_data)
         credit_cards = parser.credit_cards(cleaned_data)
+        ips = parser.ips(cleaned_data)
 
         return {'people': people, 'locations': locations, 'organizations': organizations,
                 'emails': emails, 'phone_numbers': phone_numbers, 'street_addresses': street_addresses,
-                'credit_cards': credit_cards
+                'credit_cards': credit_cards, 'ips': ips
                 }
