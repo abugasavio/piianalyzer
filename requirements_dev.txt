@@ -1,0 +1,3 @@
+-r requirements.txt
+
+pytest==1.4.29
