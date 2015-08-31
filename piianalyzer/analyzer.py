@@ -1,4 +1,5 @@
-import pandas as pd
+import csv
+import unicodecsv
 from commonregex import CommonRegex
 from nltk.tag.stanford import StanfordNERTagger
 
@@ -6,36 +7,39 @@ from nltk.tag.stanford import StanfordNERTagger
 class PiiAnalyzer(object):
     def __init__(self, filepath):
         self.filepath = filepath
+        self.parser = CommonRegex()
+        self.standford_ner = StanfordNERTagger('classifiers/english.conll.4class.distsim.crf.ser.gz')
 
     def analysis(self):
-        # reading and preparing the data
-        data = pd.read_csv(self.filepath, parse_dates=True).fillna('').to_string(index=False, header=False)
-        cleaned_data = ' '.join(data.split())
-        split_data = list(set(i.title() for i in cleaned_data.split()))
-
-        # setting up parsers
-        standford_ner = StanfordNERTagger('classifiers/english.conll.4class.distsim.crf.ser.gz')
-        parser = CommonRegex()
-
         people = []
         organizations = []
         locations = []
+        emails = []
+        phone_numbers = []
+        street_addresses = []
+        credit_cards = []
+        ips = []
+        data = []
 
-        # using standford ner
-        for title, tag in standford_ner.tag(split_data):
+        with open(self.filepath, 'rU') as filedata:
+            reader = csv.reader(filedata)
+
+            for row in reader:
+                data.extend(row)
+                for text in row:
+                    emails.extend(self.parser.emails(text))
+                    phone_numbers.extend(self.parser.phones("".join(text.split())))
+                    street_addresses.extend(self.parser.street_addresses(text))
+                    credit_cards.extend(self.parser.credit_cards(text))
+                    ips.extend(self.parser.ips(text))
+
+        for title, tag in self.standford_ner.tag(set(data)):
             if tag == 'PERSON':
                 people.append(title)
             if tag == 'LOCATION':
                 locations.append(title)
             if tag == 'ORGANIZATION':
                 organizations.append(title)
-
-        # using regex
-        emails = parser.emails(cleaned_data)
-        phone_numbers = parser.phones(cleaned_data)
-        street_addresses = parser.street_addresses(cleaned_data)
-        credit_cards = parser.credit_cards(cleaned_data)
-        ips = parser.ips(cleaned_data)
 
         return {'people': people, 'locations': locations, 'organizations': organizations,
                 'emails': emails, 'phone_numbers': phone_numbers, 'street_addresses': street_addresses,
