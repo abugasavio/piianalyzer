@@ -56,8 +56,7 @@ Licence
 TODO
 ----
 * Reading other excel file.
-*
-
+* Using unicodecsv to fix unicode data bug
 
 Authors
 -------
