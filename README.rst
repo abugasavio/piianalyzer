@@ -18,12 +18,10 @@ My Solution
 
 I decided to use the following tools for the above task:
 
-1. `Pandas <https://github.com/pydata/pandas>`_: for reading the data files into python and manipulating the datasets.
-
-2. `Common Regular expressions <https://github.com/madisonmay/CommonRegex>`_: for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
+1. `Common Regular expressions <https://github.com/madisonmay/CommonRegex>`_: for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
    credit card numbers,
 
-3. `Stanford Named Entity Tagger <http://nlp.stanford.edu/software/CRF-NER.shtml>`_: for extracting the locations, organizations and peoples names.
+2. `Stanford Named Entity Tagger <http://nlp.stanford.edu/software/CRF-NER.shtml>`_: for extracting the locations, organizations and peoples names.
 
 
 The analyzer opens the provided file, analyses it and returns a summary of the types of data that are in the provided dataset.
@@ -52,16 +50,14 @@ Requirements
 Requires the Stanford Named Entity Recognizer. It can be downloaded here: http://nlp.stanford.edu/software/CRF-NER.shtml
 
 
-Compatibility
--------------
-
 Licence
 -------
 
 TODO
 ----
-* Reading other file types such as excel, text, html etc
+* Reading other excel file.
 *
+
 
 Authors
 -------
