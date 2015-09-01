@@ -57,8 +57,7 @@ Licence
 
 TODO
 ----
-* Reading other excel file.
-*
+* Reading excel file.
 
 
 Authors
