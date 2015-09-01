@@ -1,5 +1,4 @@
-import csv
-import unicodecsv
+import unicodecsv as csv
 from commonregex import CommonRegex
 from nltk.tag.stanford import StanfordNERTagger
 
