@@ -41,7 +41,9 @@ Usage
 
 Installation
 ------------
+Install from pypi using:
 
+>>> pip install piianalyzer
 
 
 Requirements

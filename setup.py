@@ -15,7 +15,7 @@ setuptools.setup(
 
     install_requires=['commonregex>=1.5.4',
                       'nltk>=3.0.4',
-                      'pandas>=0.16.2',
+                      'unicodecsv>=0.13.0',
                       'manage.py>=0.2.10'
                       ],
 
