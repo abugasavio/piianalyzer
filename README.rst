@@ -28,28 +28,32 @@ The analyzer opens the provided file, analyses it and returns a summary of the t
 With this information the data manager can easily classify the data.
 
 
-Usage
------
-
-
->>> from piianalyzer.analyzer import PiiAnalyzer
->>> filepath = '/path/or/url/to/your/file.csv'
->>> piianalyzer = PiiAnalyzer(filepath)
->>> analysis = piianalyzer.analysis()
-
-
-
 Installation
 ------------
 Install from pypi using:
 
->>> pip install piianalyzer
+    pip install piianalyzer
 
 
 Requirements
 ^^^^^^^^^^^^
 
 Requires the Stanford Named Entity Recognizer. It can be downloaded here: http://nlp.stanford.edu/software/CRF-NER.shtml
+
+
+Usage
+-----
+
+1. Command Line
+
+    manage analyze /path/to/your/file.csv
+
+2. Python
+
+    from piianalyzer.analyzer import PiiAnalyzer
+    filepath = '/path/to/your/file.csv'
+    piianalyzer = PiiAnalyzer(filepath)
+    analysis = piianalyzer.analysis()
 
 
 Authors
