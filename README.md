@@ -63,9 +63,9 @@ Running tests
 
 Run tests using:
 
-    ``` 
+    ```` 
     py.test 
-    ```
+    ````
 
 Authors
 -------
