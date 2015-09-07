@@ -18,41 +18,56 @@ My Solution
 
 I decided to use the following tools for the above task:
 
-1. `Common Regular expressions <https://github.com/madisonmay/CommonRegex>`_: for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
+1. [Common Regular expressions](https://github.com/madisonmay/CommonRegex): for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
    credit card numbers,
 
-2. `Stanford Named Entity Tagger <http://nlp.stanford.edu/software/CRF-NER.shtml>`_: for extracting the locations, organizations and peoples names.
+2. [Stanford Named Entity Tagger](http://nlp.stanford.edu/software/CRF-NER.shtml): for extracting the locations, organizations and peoples names.
 
 
 The analyzer opens the provided file, analyses it and returns a summary of the types of data that are in the provided dataset.
 With this information the data manager can easily classify the data.
 
 
-Usage
------
-
-
->>> from piianalyzer.analyzer import PiiAnalyzer
->>> filepath = '/path/or/url/to/your/file.csv'
->>> piianalyzer = PiiAnalyzer(filepath)
->>> analysis = piianalyzer.analysis()
-
-
-
 Installation
 ------------
 Install from pypi using:
 
->>> pip install piianalyzer
+    pip install piianalyzer
 
 
 Requirements
-^^^^^^^^^^^^
+-----
 
 Requires the Stanford Named Entity Recognizer. It can be downloaded here: http://nlp.stanford.edu/software/CRF-NER.shtml
 
 
+Usage
+-----
+
+1. Command Line
+    ````
+    manage analyze /path/to/your/file.csv
+    ````
+
+2. Python
+
+    ````
+    from piianalyzer.analyzer import PiiAnalyzer
+    filepath = '/path/to/your/file.csv'
+    piianalyzer = PiiAnalyzer(filepath)
+    analysis = piianalyzer.analysis()
+    ````
+
+Running tests
+-------
+
+Run tests using:
+
+    ``` 
+    py.test 
+    ```
+
 Authors
 -------
 
-`piianalyzer` was written by `Savio Abuga <savioabuga@gmail.com>`_.
+piianalyzer was written by [Savio Abuga](savioabuga@gmail.com).
