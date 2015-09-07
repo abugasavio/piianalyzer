@@ -45,18 +45,21 @@ Usage
 -----
 
 1. Command Line
-
+    ````
     manage analyze /path/to/your/file.csv
+    ````
 
 2. Python
 
+    ````
     from piianalyzer.analyzer import PiiAnalyzer
     filepath = '/path/to/your/file.csv'
     piianalyzer = PiiAnalyzer(filepath)
     analysis = piianalyzer.analysis()
+    ````
 
 
 Authors
 -------
 
-`piianalyzer` was written by `Savio Abuga <savioabuga@gmail.com>`_.
+piianalyzer was written by [Savio Abuga](savioabuga@gmail.com).
