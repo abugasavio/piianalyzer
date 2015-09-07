@@ -18,10 +18,10 @@ My Solution
 
 I decided to use the following tools for the above task:
 
-1. ![Common Regular expressions](https://github.com/madisonmay/CommonRegex): for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
+1. [Common Regular expressions](https://github.com/madisonmay/CommonRegex): for extracting some types of 'PII' such as email addresses, phone numbers, street addresses,
    credit card numbers,
 
-2. ![Stanford Named Entity Tagger](http://nlp.stanford.edu/software/CRF-NER.shtml): for extracting the locations, organizations and peoples names.
+2. [Stanford Named Entity Tagger](http://nlp.stanford.edu/software/CRF-NER.shtml): for extracting the locations, organizations and peoples names.
 
 
 The analyzer opens the provided file, analyses it and returns a summary of the types of data that are in the provided dataset.
