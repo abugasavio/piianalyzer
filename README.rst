@@ -52,14 +52,6 @@ Requirements
 Requires the Stanford Named Entity Recognizer. It can be downloaded here: http://nlp.stanford.edu/software/CRF-NER.shtml
 
 
-Licence
--------
-
-TODO
-----
-* Reading excel file.
-
-
 Authors
 -------
 
